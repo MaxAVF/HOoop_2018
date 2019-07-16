@@ -60,13 +60,13 @@ class cliente(object):
     
 if __name__ == "__main__":
     """ simular una fila en una entidad bancaria"""
-#     clientes=[]
-#     categorias = ['general','preferencial']
+    clientes=[]
+    categorias = ['general','preferencial']
 
 #     for count in range(100):
 #        cliente_nuevo=cliente()
 #        cliente_nuevo.modificarcategoria(random.choice(categorias))
-#        clientes.list.append(cliente_nuevo)
+#        clientes.append(cliente_nuevo)
         
 #     filapreferencial=FilaPreferencial()
 #     filageneral=FilaGeneral()
