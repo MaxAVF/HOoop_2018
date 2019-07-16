@@ -1,18 +1,20 @@
+import random
+
+
 class Fila(object):
     """Clase base de fila"""
-
     def __init__(self):
-         """constructor de la clase Fila """
-        self.enfila= 0
-        self.fila = []
+       """constructor de la clase Fila """
+       self.enfila=0
+       self.fila = []
 
 class FilaPreferencial(Fila):
     """Clase de la fila de los clientes preferenciales"""        
 
     def insertar(self, cliente):
         """Inserta un nuevo cliente en la fila preferencial"""
-        pass
-
+        self.fila.append(cliente)
+        
     def atender(self):
         """Atiende al proximo cliente prederencial"""
         self.enfila-=1
@@ -20,8 +22,12 @@ class FilaPreferencial(Fila):
     
     def abrircajanueva(self,maxenfila,filanueva):
         """Si maxenfila es menor que la cantidad de clientes actualmente en espera, abro nueva caja"""
-        pass
-    
+        if maxenfila < self.enfila:
+            filanueva.insertar(self.fila.pop)
+            self.enfila-=1
+            self.fila.pop(0)
+
+         
     
     
 class FilaGeneral(Fila):
@@ -29,25 +35,48 @@ class FilaGeneral(Fila):
 
     def insertar(self, cliente):
         """Inserta un nuevo cliente en la fila no preferencial"""
-        pass
+        self.fila.append(cliente)
 
     def atender(self):
         """Atiende al proximo cliente prederencial"""
-        pass      
+        self.enfila-=1
+        self.fila.pop(0)     
 
     
 
 class cliente(object):
-     """clase cliente """
+    """clase cliente """
     def __init__(self,dni):
-         """ constructor de la clase cliente """
+        """ constructor de la clase cliente """
         self.dni=dni
         self.categoria=None
     def modificarcategoria(self, categoria):
         """modifica el atributo categoria del cliente """
-        pass
+        self.categoria=categoria
   
     
 if __name__ == "__main__":
     """ simular una fila en una entidad bancaria"""
-    pass
+#     clientes=[]
+#     categorias = ['general','preferencial']
+
+#     for count in range(100):
+#        cliente_nuevo=cliente()
+#        cliente_nuevo.modificarcategoria(random.choice(categorias))
+#        clientes.list.append(cliente_nuevo)
+        
+#     filapreferencial=FilaPreferencial()
+#     filageneral=FilaGeneral()
+    
+#     for elem in clientes:
+#         if elem.categoria='preferencial':
+#             filapreferencial.insertar(elem)
+            
+#         if elem.categoria='general':
+#             filageneral.insertar(elem)
+            
+    
+            
+            
+    
+        
