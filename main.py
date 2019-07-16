@@ -38,6 +38,7 @@ class FilaGeneral(Fila):
     def insertar(self, cliente):
         """Inserta un nuevo cliente en la fila no preferencial"""
         self.fila.append(cliente)
+        self.enfila+=1
 
     def atender(self):
         """Atiende al proximo cliente prederencial"""
